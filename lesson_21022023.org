@@ -1,0 +1,83 @@
+#+title: Lesson_21022023
+
+* Занятие 21 февраля 2023
+** Понятие алгоритма
+
+Интерпретатор Python - исполнитель
+Алгоритм может быть реализован на нескольких ЯП
+
+** Реализация сортировки пузырьком
+
+34, 31, 12, 100,
+
+list() -> использовать не будем, будем использовать связные списки.
+
+[34] -> [31] -> [12] -> [100] -> None
+  ^  ---  ^ ---  ^   --- ^
+  1       2      3       4
+
+
+[12] -> [31] -> [34] -> [100] -> None
+
+CamelCase
+snake_case
+
+#+begin_src python
+class LinkedListItem:
+
+    def __init__(self, value, next_item):
+        self.value = value
+        self.next_item = next_item
+
+    def link(self, next_item):
+        self.next_item = next_item
+
+
+def print_list(head: LinkedListItem) -> str:
+    if head == None:
+        return ""
+
+    cur_item = head
+    list_string = f"[{cur_item.value}] "
+
+    while cur_item.next_item != None:
+        cur_item = cur_item.next_item
+        list_string += f"[{cur_item.value}] "
+
+    list_string = list_string + "None"
+
+    return list_string
+
+item = LinkedListItem(34, None)
+item.next_item = LinkedListItem(31, None)
+
+return item > item.next_item
+#+end_src
+
+#+RESULTS:
+
+** Leetcode
+** Домашнее задание
+*** Сделать обход списка через for
+
+В нашем коде пузырьковой сортировки используется цикл while. Попробовать
+переделать код таким образом, чтобы использовать цикл for.
+
+*** Прочитать PEP-484 и понять его смысл
+
+Естественно можно пользоваться переведенной статьей.
+
+*** Научиться пользоваться отладчиком в PyChar и/или VS Code
+
+VSCode: https://code.visualstudio.com/docs/python/debugging
+
+PyCharm: https://www.jetbrains.com/help/pycharm/part-1-debugging-python-code.html#inline-debugging
+
+*** Написать определенную функцию класса
+
+Чтобы выводить "красивое" значение объекта класс в интерпретаторе / отладчике.
+
+Если мы в интерпритаторе Python или отладчике PDB пытаемся вывести item, то нам
+выводится информаци о том что это объект такого-то класса, который находится по
+такому-то адресу в памяти. А нам надо, чтобы выводилось значениек (value) и
+имеется ли следующий елемент (next_item !=  None).

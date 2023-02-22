@@ -1,0 +1,167 @@
+#+title: Lesson_16022023
+
+* Занятие 16 февраля 2023
+** Проверка ДЗ
+
+Что значит:
+
+- [X] Explicit is better than implicit.
+
+#+begin_src python
+a = "1"
+b = 2
+
+
+a + b -> Error
+int(a) + b -> 3
+#+end_src
+
+- [X] Although practicality beats purity.
+
+Практичность лучше безупречности
+
+- [X] There should be one-- and preferably only one --obvious way to do it.
+      Although that way may not be obvious at first unless you're Dutch.
+
+#+begin_src python
+a = [1,2,3,4,5,6]
+
+sum = 0
+for i in a:
+    sum += i
+
+return sum(a)
+#+end_src
+
+- [X] Errors should never pass silently.
+      Unless explicitly silenced.
+
+#+begin_src python
+a = [1,2,3,4,"five",6]
+
+def sum(array_a):
+   sum = 0
+   for i in array_a:
+      try:
+         sum += i
+      except:
+         pass
+   return sum
+#+end_src
+
+- [X] Flat is better than nested.
+
+
+?
+
+Задаю вопрос, жду 3 секунды желающего ответить и если не дожидаюсь, то назначаю
+добровольца сам.
+
+** Структура языка программирования Python коротко
+
+https://docs.python.org/3/tutorial/index.html
+
+*** if, for и прочее
+*** Функции
+#+begin_src python
+def test_funct(a, b=1, c=1, threshold=50):
+    print(a)
+    if (a*b*c) > threshold:
+        print(f"Вход больше чем {threshold}")
+        return True
+    else:
+        return False
+
+
+for i in range(100):
+    if test_funct(i, threshold=97):
+        print("Положительно")
+    else:
+        print("Отрицательно")
+
+
+i = 100
+"Тут будет переменная " + str(i)
+"Тут будет переменная {}".format(i)
+f"Тут будет переменная {i}"
+#+end_src
+
+#+RESULTS:
+: None
+
+** Что такое архитектура ПО?
+
+Начинаем с "простой" трехзвенной структуры. Дальше будем "утяжелять".
+
+** Аналитика функциональности - что это?
+
+Большая задача -> Большая программа
+
+Из чего состоит большая задача?
+
+- Экраны
+- Сущности
+
+** Акторы и Варианты использования
+
+Мы хотим создать систему для управления персональными финансами.
+
+1) Кто будет взаимодействовать с системой?
+
+   Частные лица. Актор
+
+2) С какими сущностями будет работать система?
+
+   - Аккаунт
+   - Трата (движение между аккаунтами)
+   - Рекурентные платежи (ЖКХ, счета)
+   ...
+
+3) Варианты использования (UseCases) -> Фукнциональные требования
+
+   1) Вход в систему
+
+   2) Управление аккаунтами
+
+   3) Управление тратами
+
+   4) Управление доходами
+
+   5) Просмотр плана финансового
+
+   6) Просмотр информации о тратах по категориям
+
+4) Нефункциональные требования
+   - Безопасность (я вхожу под логином и паролем и могу посмотреть только свои
+     записи и никто кроме меня и администратора не может посмотреть мою
+     информацию).
+   - Легкость использования (я не обязан учиться для того, чтобы использовать
+     систему)
+   - Система должна легко обрабатывать запросы от 100 одновременных
+     пользователей.
+   - Система должна иметь возможность (не с первой версии) работать с
+     несколькими валютами.
+
+** Чем нам поможет Django?
+
+- Модели и ORM -> уровень хранения
+- Шаблоны
+- URL / HTTP с Запросами и Ответами
+
+** Домашнее задание
+*** Самостоятельно изучить конструкции языка
+**** Классы
+https://python-scripts.com/python-class
+**** Декораторы
+https://tproger.ru/translations/demystifying-decorators-in-python/
+**** "Волшебные методы"
+https://tproger.ru/articles/gajd-po-magicheskim-metodam-v-python/
+**** try except finally
+https://pythonworld.ru/tipy-dannyx-v-python/isklyucheniya-v-python-konstrukciya-try-except-dlya-obrabotki-isklyuchenij.html
+*** Постараться придумать примеры использования этих конструкций
+
+??
+
+*** Зарегистрировать на https://github.com/ и скинуть мне свой nick
+
+??
