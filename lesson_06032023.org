@@ -1,0 +1,75 @@
+#+title:Lesson_06032023
+
+
+* Занятие 7 марта 2023
+** Задача о преобразовании списка в строку
+
+Алгоритм:
+
+1) Отсортировать значения в списке [2,3,6,8,1,11] -> [1,2,3,6,8,11]
+2) Последовательно идем по списку
+   a) Если это первое число, то занесем его как предыдущее
+   b) Если это не первое число, то сравним его с предыдущим
+   c) Если разница текущего числа и предыдущего равняется единице ... ?
+...
+
+[1,2,5,6,7,8,9,10]
+   ^
+   |
+
+#+begin_src python
+a = [5,2,7,1,9,6,10,8]
+
+def compact(l):
+    """
+    Эта функция преобразует список в нужную нам сроку
+    """
+    l = sorted(l)
+    out_str = ""
+    start = None
+    end = None
+    prev = None
+
+    for i in l:
+        if prev is None:
+            prev = i
+            continue
+        else:
+            diff = i - prev
+            if diff == 1:
+               start = prev
+               end = i
+               prev = i
+            else:
+               out_str += f"{start}{',' if end-start == 1 else '-'}{end},"
+               prev = i
+               start = None
+               end = None
+        if i == l[-1]: # Последний элемент
+            if start is not None and end is not None:
+
+               out_str += f"{start}{',' if i-start == 1 else '-'}{i},"
+               ...
+            else:
+               out_str += f"{i}"
+               ...
+        ...
+
+    return out_str
+
+return compact(a)
+
+#+end_src
+
+#+RESULTS:
+: 1,2,9,10,
+
+** Django часть
+- Модель Accounts
+  https://docs.djangoproject.com/en/4.1/intro/tutorial02/
+- Типы полей
+  https://docs.djangoproject.com/en/4.1/ref/models/fields/
+** Домашнее задание
+*** Почему использование is лучше чем == при сравнении переменной с None
+*** Дописать алгоритм
+*** Дописать функцию
