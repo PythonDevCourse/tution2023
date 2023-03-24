@@ -1,0 +1,13 @@
+#+title: Lesson_23032023
+
+* Django CBV
+
+
+
+* Двигаем проект вперед
+
+https://github.com/PythonDevCourse/tution2023_finexp
+
+* Домашнее задание
+
+Реализовать вывод при помощи CBV для модели MoneyMovement

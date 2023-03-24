@@ -55,7 +55,7 @@ ROOT_URLCONF = "tstprj.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["tstprj/templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

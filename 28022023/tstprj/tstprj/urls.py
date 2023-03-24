@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from accounts.views import view, AccountListView
+from django.views.generic import RedirectView
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", view, name="home"),
+    path("new/", AccountListView.as_view(), name="new"),
+    path("redirect/", RedirectView.as_view(url="http://ya.ru"), name="redirect"),
 ]
