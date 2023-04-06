@@ -1,0 +1,31 @@
+#+title: Lesson_31032023
+
+* Домашнее задание
+* Ответы на вопросы
+** Pyenv & virtualenv
+
+PyEnv для Windows: https://pyenv-win.github.io/pyenv-win/
+
+** WSL и Docker
+
+Windows subsystem for Linux
+
+*** Docker @ Linux host
+1.5 %% потерь
+
+[Linux Host] -> копируется ядро для Docker -> контейнер 1
+                                           -> контейнер 2
+
+*** Windows & Mac OS
+15-20%% потерь
+
+[Windows host] -> виртруальная машина -> [Linux host] -> ...
+
+** Документация для Docker и Docker compose
+
+https://docs.docker.com/engine/reference/builder/
+https://docs.docker.com/compose/compose-file/03-compose-file/
+
+** Переменные окружения
+
+https://remontka.pro/environment-variables-windows/

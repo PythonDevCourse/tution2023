@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "06042023"
+version = "0.1.0"
+description = ""
+authors = ["Peter Kurishev <peter@kurishev.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pygame = "^2.3.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+flake8 = "^6.0.0"
+flake8-black = "^0.3.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

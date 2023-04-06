@@ -1,0 +1,13 @@
+#+title: Lesson_29032023
+
+* Домашнее задание от предыдущего урока
+
+** Cookiecutter и создание проекта для Django - повторить
+
+** Docker - создание образов (images) и контейнеров (containers)
+
+Склонировать проект наш новый и там docker-compose build
+
+Запуск интерпритатора в контенере:
+
+> docker run -v /home/peter/org:/var/www python ls /var/www

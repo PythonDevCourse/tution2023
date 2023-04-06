@@ -1,0 +1,27 @@
+#+title: 27032023
+
+* Занятие 27 марта 2023
+
+** Cookiecutter для создания Python проектов
+
+Что такое cookiecutter и зачем он есть. Какие есть параметры у
+django-cookiecutter и за что они отвечают.
+
+** Docker & Docker-compose & все-все-все
+*** YAML - формат файла docker-compose
+
+Y - yet
+A - another
+M - markup
+L - language
+
+HTML
+SGML
+
+*** Dockerfile - основной файл сборки образа Docker
+
+** Домашнее задание
+*** Повторить
+- docker pull python
+- docker run -v <локальная папка>:/var/www python python /var/www/<python файл>
+- docker-compose -f local.yml build -> сборка проекта из репозитория
